@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Dispatch, SetStateAction, useRef } from "react";
 
 interface props {
+  text: string;
   setText: Dispatch<SetStateAction<string>>;
 }
 
-const Search = ({ setText }: props) => {
+const Search = ({ text, setText }: props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   //div 태그 클릭시 input 태그 focus
   const onClickInput = () => {
@@ -19,6 +20,8 @@ const Search = ({ setText }: props) => {
     >
       <FontAwesomeIcon icon={faSearch} />
       <input
+        autoFocus
+        value={text}
         ref={inputRef}
         onChange={(e) => setText(e.target.value)}
         type="text"
