@@ -10,7 +10,7 @@ const Detail = () => {
     <div className="space-y-4">
       <header className="h-full space-y-8 border-[1px] p-8">
         <p className="mb-8 text-center text-3xl font-semibold">{item?.title}</p>
-        <span>{item?.content}</span>
+        <span className="text-sm">{item?.content}</span>
       </header>
       <div
         onClick={() => navigate(-1)}
