@@ -1,10 +1,10 @@
 import PostList from "../components/PostList";
-import { useInfiniteRef } from "../hooks/useInfiniteRef";
 import Search from "../components/Search";
 import TypeToggle from "../components/TypeToggle";
+import { useList } from "../hooks/useList";
 
 const Home = () => {
-  const { List, boxRef, setText, listType, setListType } = useInfiniteRef();
+  const { List, boxRef, setText, listType, setListType } = useList();
   return (
     <section>
       <header className="text-center">
@@ -14,7 +14,7 @@ const Home = () => {
         <article className="my-10 flex w-full justify-center">
           <Search setText={setText} />
         </article>
-        <article className="mb-2 border-b-[1px] py-2">
+        <article className="mb-2 border-b-[1px]">
           <TypeToggle listType={listType} setListType={setListType} />
         </article>
         <article className="rounded-md border-[1px] p-4 shadow-inner">
