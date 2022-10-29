@@ -25,7 +25,7 @@ export const useGetList = (type: string, searchValue: string) => {
     },
     {
       getNextPageParam: (_, allPages) => {
-        return allPages.length + 1;
+        return allPages.length;
       },
     }
   );
