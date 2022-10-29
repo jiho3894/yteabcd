@@ -22,7 +22,7 @@ const Home = () => {
         <article className="mb-2 border-b-[1px]">
           <TypeToggle listType={listType} setListType={setListType} />
         </article>
-        <article className="rounded-md border-[1px] p-4 shadow-inner">
+        <article className="rounded-md border-[1px] p-4 shadow-inner mb-4">
           <PostList
             text={text}
             list={List}

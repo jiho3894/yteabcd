@@ -26,7 +26,7 @@ const Search = ({ text, setText }: props) => {
         onChange={(e) => setText(e.target.value)}
         type="text"
         placeholder="검색어를 입력하세요"
-        className="w-64"
+        className="w-[80%]"
       />
     </div>
   );

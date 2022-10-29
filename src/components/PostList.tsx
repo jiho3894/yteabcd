@@ -31,11 +31,10 @@ const PostList = ({ text, list, listType, boxRef }: props) => {
                   sessionStorage.setItem("text", text);
                 }}
                 to={`${listType}?id=${item.id}`}
-                className="textBreak"
               >
                 <span className="font-semibold text-blue-500">{`${item.id}. `}</span>
                 <span className="font-semibold">{item.title}</span>
-                <p className="break-words text-sm">{item.content}</p>
+                <p className="textBreak break-words text-sm">{item.content}</p>
               </Link>
             </li>
           );
