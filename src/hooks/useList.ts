@@ -3,8 +3,14 @@ import { useGetList } from "../api/PostList/query";
 import { useInput } from "./useInput";
 
 export const useList = () => {
-  const [text, setText] = useState("");
-  const [listType, setListType] = useState<string>("a");
+  const typeStorage = sessionStorage.getItem("type");
+  const textStorate = sessionStorage.getItem("text");
+  const [listType, setListType] = useState<string>(
+    typeStorage === null ? "a" : String(sessionStorage.getItem("type"))
+  );
+  const [text, setText] = useState(
+    textStorate === null ? "" : String(sessionStorage.getItem("text"))
+  );
   const query = useInput(text);
   const {
     data: List,
@@ -37,5 +43,5 @@ export const useList = () => {
     boxRef.current && observerRef.current.observe(boxRef.current);
   }, [List, intersectionObserver]);
 
-  return { List, boxRef, setText, listType, setListType };
+  return { List, boxRef, text, setText, listType, setListType };
 };

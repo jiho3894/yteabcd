@@ -5,10 +5,11 @@ import { ListProp } from "../api/PostList/type";
 interface props {
   list: InfiniteData<ListProp[]> | undefined;
   listType: string;
+  text: string;
   boxRef: React.RefObject<HTMLLIElement>;
 }
 
-const PostList = ({ list, listType, boxRef }: props) => {
+const PostList = ({ text, list, listType, boxRef }: props) => {
   return (
     <ul>
       {list?.pages.map((data, pageIndex) =>
@@ -24,7 +25,14 @@ const PostList = ({ list, listType, boxRef }: props) => {
               }
               className="p-4 duration-150 hover:bg-gray-100"
             >
-              <Link to={`${listType}?id=${item.id}`} className="textBreak">
+              <Link
+                onClick={() => {
+                  sessionStorage.setItem("type", listType);
+                  sessionStorage.setItem("text", text);
+                }}
+                to={`${listType}?id=${item.id}`}
+                className="textBreak"
+              >
                 <span className="font-semibold text-blue-500">{`${item.id}. `}</span>
                 <span className="font-semibold">{item.title}</span>
                 <p className="break-words text-sm">{item.content}</p>
