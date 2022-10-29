@@ -3,11 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    @apply tracking-tighter;
+  }
   body {
     @apply m-auto max-w-[1000px] px-10 pt-20;
   }
   input {
     @apply outline-none;
+  }
+
+  .typeSpan {
+    @apply cursor-pointer  rounded-sm  p-2  duration-150 hover:bg-gray-100 hover:text-blue-300;
   }
 
   .textBreak {
