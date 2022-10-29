@@ -8,13 +8,14 @@ interface props {
 
 const Search = ({ setText }: props) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  //div 태그 클릭시 input 태그 focus
   const onClickInput = () => {
     inputRef.current?.focus();
   };
   return (
     <div
       onClick={onClickInput}
-      className="w-80 space-x-2 rounded-md border-[1px] p-3 text-sm text-gray-400 duration-150  hover:border-blue-400 active:border-blue-400"
+      className="w-80 space-x-2 rounded-md border-[1px] p-3 text-sm text-gray-400 duration-150 focus-within:border-blue-400  hover:border-blue-400"
     >
       <FontAwesomeIcon icon={faSearch} />
       <input
